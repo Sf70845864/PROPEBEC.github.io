@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto PROPEBEC - Educación de Calidad</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 82, 147, 0.8), rgba(0, 82, 147, 0.8)), 
+                        url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/eb9417d2-bac9-4bc5-accc-3794c102404e.png') no-repeat center center;
+            background-size: cover;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion.active .accordion-content {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/559d380f-56d8-4adc-9601-7d828a0978e8.png" alt="Logo del Instituto PROPEBEC con diseño moderno en azul y blanco" class="h-12">
+                    <span class="ml-3 text-xl font-bold text-blue-800">PROPEBEC</span>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#historia" class="text-blue-800 hover:text-blue-600 font-medium">Historia</a>
+                    <a href="#carreras" class="text-blue-800 hover:text-blue-600 font-medium">Carreras</a>
+                    <a href="#profesores" class="text-blue-800 hover:text-blue-600 font-medium">Profesores</a>
+                    <a href="#resenas" class="text-blue-800 hover:text-blue-600 font-medium">Reseñas</a>
+                    <a href="#asesoras" class="text-blue-800 hover:text-blue-600 font-medium">Asesoras</a>
+                </nav>
+                <button class="md:hidden focus:outline-none" id="menu-btn">
+                    <svg class="w-6 h-6 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-4" id="mobile-menu">
+                <a href="#historia" class="block py-2 text-blue-800 hover:text-blue-600">Historia</a>
+                <a href="#carreras" class="block py-2 text-blue-800 hover:text-blue-600">Carreras</a>
+                <a href="#profesores" class="block py-2 text-blue-800 hover:text-blue-600">Profesores</a>
+                <a href="#resenas" class="block py-2 text-blue-800 hover:text-blue-600">Reseñas</a>
+                <a href="#asesoras" class="block py-2 text-blue-800 hover:text-blue-600">Asesoras</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Instituto PROPEBEC</h1>
+            <p class="text-xl md:text-2xl mb-8">Formando profesionales de excelencia con valores y compromiso social</p>
+            <a href="#carreras" class="bg-white text-blue-800 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 inline-block">Conoce nuestras carreras</a>
+        </div>
+    </section>
+
+    <!-- Historia Section -->
+    <section id="historia" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Nuestra Historia</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8d48017a-ffa2-41b0-83d8-395627e57e54.png" alt="Edificio principal del Instituto PROPEBEC con arquitectura moderna y estudiantes en los jardines" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-gray-700 mb-4">Fundado en 1995, el Instituto PROPEBEC nació con la misión de brindar educación técnica de calidad accesible para todos.</p>
+                    <p class="text-gray-700 mb-4">A lo largo de más de 25 años, hemos formado a miles de profesionales que hoy son líderes en sus campos, manteniendo siempre nuestro compromiso con la excelencia académica y los valores humanos.</p>
+                    <p class="text-gray-700 mb-4">Nuestro modelo educativo combina teoría y práctica, preparando a los estudiantes para los desafíos del mundo laboral actual.</p>
+                    <p class="text-gray-700">Hoy somos reconocidos como una de las instituciones técnicas más prestigiosas de la región, con acreditaciones nacionales e internacionales que respaldan nuestra calidad educativa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carreras Section -->
+    <section id="carreras" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Nuestras Carreras</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Carrera 1 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden accordion">
+                    <button class="w-full px-6 py-4 bg-blue-800 text-white text-left font-semibold flex justify-between items-center accordion-btn">
+                        <span>Técnico en Informática</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 bg-white">
+                            <p class="text-gray-700 mb-4">Formación en desarrollo de software, redes y sistemas informáticos con enfoque práctico.</p>
+                            <ul class="list-disc pl-5 text-gray-700 mb-4">
+                                <li>Duración: 2 años</li>
+                                <li>Turnos: Mañana, Tarde y Noche</li>
+                                <li>Título: Técnico Superior en Informática</li>
+                            </ul>
+                            <p class="text-gray-700">Campo laboral: Desarrollo web, administración de redes, soporte técnico, análisis de sistemas.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carrera 2 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden accordion">
+                    <button class="w-full px-6 py-4 bg-blue-800 text-white text-left font-semibold flex justify-between items-center accordion-btn">
+                        <span>Técnico en Administración</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 bg-white">
+                            <p class="text-gray-700 mb-4">Formación en gestión empresarial, contabilidad y recursos humanos con visión estratégica.</p>
+                            <ul class="list-disc pl-5 text-gray-700 mb-4">
+                                <li>Duración: 2 años</li>
+                                <li>Turnos: Mañana y Noche</li>
+                                <li>Título: Técnico Superior en Administración</li>
+                            </ul>
+                            <p class="text-gray-700">Campo laboral: Gestión de empresas, departamentos contables, recursos humanos, emprendimiento.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carrera 3 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden accordion">
+                    <button class="w-full px-6 py-4 bg-blue-800 text-white text-left font-semibold flex justify-between items-center accordion-btn">
+                        <span>Técnico en Electrónica</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 bg-white">
+                            <p class="text-gray-700 mb-4">Formación en sistemas electrónicos, automatización y mantenimiento industrial.</p>
+                            <ul class="list-disc pl-5 text-gray-700 mb-4">
+                                <li>Duración: 2.5 años</li>
+                                <li>Turnos: Tarde y Noche</li>
+                                <li>Título: Técnico Superior en Electrónica</li>
+                            </ul>
+                            <p class="text-gray-700">Campo laboral: Mantenimiento industrial, automatización, telecomunicaciones, empresas de energía.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carrera 4 -->
+                <div class="mb-4 border border-gray-200 rounded-lg overflow-hidden accordion">
+                    <button class="w-full px-6 py-4 bg-blue-800 text-white text-left font-semibold flex justify-between items-center accordion-btn">
+                        <span>Técnico en Turismo</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="px-6 py-4 bg-white">
+                            <p class="text-gray-700 mb-4">Formación en gestión turística, hotelería y guía profesional con enfoque internacional.</p>
+                            <ul class="list-disc pl-5 text-gray-700 mb-4">
+                                <li>Duración: 2 años</li>
+                                <li>Turnos: Mañana y Tarde</li>
+                                <li>Título: Técnico Superior en Turismo</li>
+                            </ul>
+                            <p class="text-gray-700">Campo laboral: Agencias de viajes, hoteles, operadores turísticos, guía profesional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profesores Section -->
+    <section id="profesores" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Nuestros Profesores</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Profesor 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/884c55cf-b019-4146-bde0-3fdc11baf1ba.png" alt="Profesor Carlos Méndez, especialista en informática, sonriendo con fondo de pizarra con código" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">Carlos Méndez</h3>
+                        <p class="text-gray-600 mb-2">Especialidad: Informática</p>
+                        <p class="text-gray-700">Más de 15 años de experiencia en desarrollo de software. Certificado en tecnologías Microsoft y Google.</p>
+                    </div>
+                </div>
+                
+                <!-- Profesor 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/55d20ef5-b912-4fdf-91ec-3aff4fa1a3e5.png" alt="Profesora Laura Ramírez, especialista en administración, con traje formal en oficina" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">Laura Ramírez</h3>
+                        <p class="text-gray-600 mb-2">Especialidad: Administración</p>
+                        <p class="text-gray-700">MBA con experiencia en gestión de empresas multinacionales. Enfoque en emprendimiento.</p>
+                    </div>
+                </div>
+                
+                <!-- Profesor 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dd3a5040-993d-47d3-91fd-4faad1ae0b4a.png" alt="Profesor Javier Torres, especialista en electrónica, en laboratorio con equipos tecnológicos" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">Javier Torres</h3>
+                        <p class="text-gray-600 mb-2">Especialidad: Electrónica</p>
+                        <p class="text-gray-700">Ingeniero electrónico con especialización en automatización industrial. 20 años de experiencia docente.</p>
+                    </div>
+                </div>
+                
+                <!-- Profesor 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover transition duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/efb31cfe-501e-4e1c-831b-07bb98bd27cb.png" alt="Profesora Ana Sánchez, especialista en turismo, en entorno natural con mapa" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-800 mb-2">Ana Sánchez</h3>
+                        <p class="text-gray-600 mb-2">Especialidad: Turismo</p>
+                        <p class="text-gray-700">Licenciada en Turismo con experiencia en hotelería internacional y gestión de destinos turísticos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reseñas Section -->
+    <section id="resenas" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Reseñas de Nuestros Estudiantes</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Reseña 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/015a2615-70cb-4b47-aa60-df222f7fc059.png" alt="Estudiante Juan Pérez, egresado de Informática, sonriendo con fondo de campus" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-blue-800">Juan Pérez</h4>
+                            <p class="text-gray-600 text-sm">Egresado de Informática</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"El instituto PROPEBEC me dio las herramientas para conseguir mi primer trabajo como desarrollador web. Los profesores son excelentes y siempre están dispuestos a ayudar."</p>
+                    <div class="flex mt-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                </div>
+                
+                <!-- Reseña 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c4deb066-3d9f-47e0-8f01-d8254bbcb338.png" alt="Estudiante María González, egresada de Administración, en traje profesional" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-blue-800">María González</h4>
+                            <p class="text-gray-600 text-sm">Egresada de Administración</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Gracias a PROPEBEC pude montar mi propio negocio. Las clases prácticas y los casos reales que vimos fueron clave para mi formación como empresaria."</p>
+                    <div class="flex mt-4">
+                        <span class="text-yellow-400">★★★★★</span>
+                    </div>
+                </div>
+                
+                <!-- Reseña 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ec64d78a-459a-4ce5-bda0-8a9ba445a197.png" alt="Estudiante Roberto Díaz, egresado de Electrónica, con herramientas técnicas" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-blue-800">Roberto Díaz</h4>
+                            <p class="text-gray-600 text-sm">Egresado de Electrónica</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Los laboratorios están muy bien equipados y los profesores tienen mucha experiencia en la industria. Conseguí trabajo antes de graduarme gracias a las prácticas profesionales."</p>
+                    <div class="flex mt-4">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Asesoras Section -->
+    <section id="asesoras" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">Asesoras Educativas</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Asesora 1 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/508ccd7c-f3ed-4013-8d65-c7d5457ad20c.png" alt="Asesora educativa Patricia López, profesional con tablet y documentos, sonriendo" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Patricia López</h3>
+                    <p class="text-gray-600 mb-2">Asesora de Informática</p>
+                    <p class="text-gray-700 mb-3">Orientación sobre planes de estudio y oportunidades laborales en tecnología.</p>
+                    <p class="text-blue-600">plopez@propebec.edu</p>
+                    <p class="text-gray-600">Ext. 101</p>
+                </div>
+                
+                <!-- Asesora 2 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d280dc91-e9fc-4760-a609-2d889b040b12.png" alt="Asesora educativa Gabriela Rojas, profesional con carpeta y lentes, en oficina" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Gabriela Rojas</h3>
+                    <p class="text-gray-600 mb-2">Asesora de Administración</p>
+                    <p class="text-gray-700 mb-3">Apoyo en procesos de admisión y becas para carreras administrativas.</p>
+                    <p class="text-blue-600">grojas@propebec.edu</p>
+                    <p class="text-gray-600">Ext. 102</p>
+                </div>
+                
+                <!-- Asesora 3 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/db3ff1e5-dfaa-47f4-ab8e-d1af05953827.png" alt="Asesora educativa Daniela Méndez, profesional joven con tablet, en recepción" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Daniela Méndez</h3>
+                    <p class="text-gray-600 mb-2">Asesora de Electrónica</p>
+                    <p class="text-gray-700 mb-3">Información sobre prácticas profesionales y convenios con empresas.</p>
+                    <p class="text-blue-600">dmendez@propebec.edu</p>
+                    <p class="text-gray-600">Ext. 103</p>
+                </div>
+                
+                <!-- Asesora 4 -->
+                <div class="bg-gray-50 rounded-lg shadow-md p-6 text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/62bf4407-21a7-40a1-97a2-65a7ee96c14d.png" alt="Asesora educativa Carolina Herrera, profesional experimentada con documentos" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h3 class="text-xl font-bold text-blue-800 mb-2">Carolina Herrera</h3>
+                    <p class="text-gray-600 mb-2">Asesora de Turismo</p>
+                    <p class="text-gray-700 mb-3">Orientación sobre intercambios internacionales y certificaciones.</p>
+                    <p class="text-blue-600">cherrera@propebec.edu</p>
+                    <p class="text-gray-600">Ext. 104</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="md:w-1/2 mb-8 md:mb-0">
+                    <h2 class="text-2xl font-bold mb-4">Contacto</h2>
+                    <p class="mb-4">Av. Educación 1234, Ciudad Universitaria</p>
+                    <p class="mb-4">Teléfono: (123) 456-7890</p>
+                    <p class="mb-4">Email: info@propebec.edu</p>
+                    <p>Horario de atención: Lunes a Viernes de 8:00 a 18:00</p>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-2xl font-bold mb-4">Síguenos</h2>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-white text-blue-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition duration-300">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="bg-white text-blue-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition duration-300">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="bg-white text-blue-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition duration-300">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="bg-white text-blue-800 w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-200 transition duration-300">
+                            <span class="sr-only">YouTube</span>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>© 2023 Instituto PROPEBEC. Todos los derechos reservados.</p>
+            <div class="mt-4">
+                <a href="#" class="text-sm text-gray-300 hover:text-white mx-2">Política de Privacidad</a>
+                <a href="#" class="text-sm text-gray-300 hover:text-white mx-2">Términos de Servicio</a>
+                <a href="#" class="text-sm text-gray-300 hover:text-white mx-2">Mapa del Sitio</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Accordion functionality for carreras
+        const accordions = document.querySelectorAll('.accordion');
+        accordions.forEach(accordion => {
+            const btn = accordion.querySelector('.accordion-btn');
+            const content = accordion.querySelector('.accordion-content');
+            const icon = btn.querySelector('svg');
+            
+            btn.addEventListener('click', () => {
+                accordion.classList.toggle('active');
+                
+                if (accordion.classList.contains('active')) {
+                    icon.classList.add('rotate-180');
+                } else {
+                    icon.classList.remove('rotate-180');
+                }
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
